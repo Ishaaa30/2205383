@@ -2,7 +2,6 @@ const axios = require('axios');
 
 const fetchNumbers = async (numberid, token) => {
   try {
-    // Map numberid to the correct API endpoint
     const apiEndpoints = {
       p: 'http://20.244.56.144/evaluation-service/primes',
       f: 'http://20.244.56.144/evaluation-service/fibo',
@@ -10,7 +9,6 @@ const fetchNumbers = async (numberid, token) => {
       r: 'http://20.244.56.144/evaluation-service/rand',
     };
 
-    // Get the correct URL based on the numberid
     const url = apiEndpoints[numberid];
     if (!url) {
       throw new Error('Invalid number ID.');
@@ -23,7 +21,6 @@ const fetchNumbers = async (numberid, token) => {
       },
     });
 
-    // Return the numbers from the response
     return response.data.numbers;
   } catch (error) {
     console.error('Error fetching numbers:', error.message);
