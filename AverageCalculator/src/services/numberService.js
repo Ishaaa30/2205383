@@ -1,15 +1,13 @@
 
 const updateWindow = (window, newNumbers, size) => {
-    // Add unique numbers to the window
     newNumbers.forEach((num) => {
       if (!window.includes(num)) {
         window.push(num);
       }
     });
   
-    // Ensure the window size does not exceed the limit
     while (window.length > size) {
-      window.shift(); // Remove the oldest number
+      window.shift();
     }
   
     return window;
